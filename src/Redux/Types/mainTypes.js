@@ -1,0 +1,4 @@
+export const HANDLE_REGISTER = "HANDLE_REGISTER";
+export const HANDLE_UPDATE = "HANDLE_UPDATE";
+export const HANDLE_EDIT = "HANDLE_EDIT";
+export const HANDLE_DELETE = "HANDLE_DELETE";
