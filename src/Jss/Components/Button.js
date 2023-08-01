@@ -32,3 +32,19 @@ export const ButtonUpdate = styled(Button)`
         border: 1px solid ${props => props.theme.buttonCapNhat};
     }
 `;
+export const ButtonEdit = styled(Button)`
+    background-color: ${props => props.theme.buttonChinhSua};
+    &:hover {
+        color: ${props => props.theme.buttonChinhSua};
+        background-color: ${props => props.theme.title};
+        border: 1px solid ${props => props.theme.buttonChinhSua};
+    }
+`;
+export const ButtonDelete = styled(Button)`
+    background-color: ${props => props.theme.buttonXoa};
+    &:hover {
+        color: ${props => props.theme.buttonXoa};
+        background-color: ${props => props.theme.title};
+        border: 1px solid ${props => props.theme.buttonXoa};
+    }
+`;

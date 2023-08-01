@@ -44,7 +44,7 @@ export default class FormDangKy extends Component {
               <Label forId={"code"}>mã loại người dùng</Label>
               <Select id="code" name="code">
                 <Option value={1}>khách hàng</Option>
-                <Option value={2}>nhân sự</Option>
+                <Option value={2}>doanh nghiệp</Option>
               </Select>
             </Div>
           </Div>
