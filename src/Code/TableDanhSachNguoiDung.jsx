@@ -10,12 +10,11 @@ import { Tbody } from '../Jss/Components/Tbody'
 import { connect } from 'react-redux'
 import { Td, TdText } from '../Jss/Components/Td'
 import { ButtonDelete, ButtonEdit } from '../Jss/Components/Button'
-import { handleDelete } from '../Redux/Actions/mainActions'
+import { handleDelete, handleEdit } from '../Redux/Actions/mainActions'
 
 class TableDanhSachNguoiDung extends Component {
   renderListUser = () => {
     return this.props.handle.listUser.map((object,index) => {
-      console.log(object);
       return  <Tr key={index}>
                 <Td>{index + 1}</Td>
                 <Td>{object.account}</Td>
@@ -26,8 +25,8 @@ class TableDanhSachNguoiDung extends Component {
                 <TdText>{object.type}</TdText>
                 <Td>
                   <DivButton>
-                    <ButtonEdit type="button" onClick={() => {}}>chỉnh sữa</ButtonEdit>
-                    <ButtonDelete type="button" onClick={() => {this.props.handleDelete(object.account);}}>xoá</ButtonDelete>
+                    <ButtonEdit type="button" onClick={() => {this.props.handleEdit(object.id)}}>chỉnh sữa</ButtonEdit>
+                    <ButtonDelete type="button" onClick={() => {this.props.handleDelete(object.id);}}>xoá</ButtonDelete>
                   </DivButton>
                 </Td>
               </Tr>
@@ -67,8 +66,11 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleDelete : (account) => {
-      dispatch(handleDelete(account));
+    handleDelete : (id) => {
+      dispatch(handleDelete(id));
+    },
+    handleEdit : (id) => {
+      dispatch(handleEdit(id));
     }
   };
 };
